@@ -6,6 +6,8 @@ using namespace std;
 static map<int, int> f_memo;
 static map<int, int> f1_memo;
 
+/* f1(n) = 0 (n<10)
+ *       | f1(n div 10) + (n mod 10) (else) */
 int f1(int k) {
   if (f1_memo.find(k) != f1_memo.end()) return f1_memo[k];
 
@@ -22,6 +24,8 @@ int f1(int k) {
   return f1_k;
 }
 
+/* f(n) = 0 (n < 10)
+ *      | 1 + f(f1(n)) (else) */
 int f(int k)
 {
   if (f_memo.find(k) != f_memo.end()) return f_memo[k];
@@ -38,6 +42,8 @@ int f(int k)
   return f_k;
 }
 
+/* g(n) = 0 (n=0)
+ *      | f(n) + g(n-1) (else) */
 int g(int n)
 {
   int sum = 0;
