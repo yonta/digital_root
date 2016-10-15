@@ -26,7 +26,7 @@ int f(int k)
 {
   if (f_memo.find(k) != f_memo.end()) return f_memo[k];
 
-  cout << endl << "f(" << k << "),";
+  cout << "f(" << k << "),";
 
   if (k < 10) {
     f_memo[k] = 0;
