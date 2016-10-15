@@ -55,9 +55,19 @@ int g(int n)
 
 int main()
 {
+/* main
   int n;
   cin >> n;
   int g_n = g(n);
-  cout << endl;
   cout << g_n;
+*/
+/* debug with std input
+  int n;
+  while(cin >> n) {
+    int g_n = g(n);
+    cout << g_n << endl;
+  }
+*/
+  /* debug from 0 to N */
+  for (int n = 0; n < 200; ++n) cout << endl << "n="<< n << ":" << g(n) << endl;
 }
