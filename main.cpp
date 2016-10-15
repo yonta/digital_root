@@ -17,14 +17,9 @@ int f1(int k) {
   }
 
   div_t d = div(k, 10);
-  int n = d.quot + d.rem;
-  if (n < 10) {
-    return f1(n);
-  } else {
-    int f1_k = f1(d.quot) + d.rem;
-    f1_memo[k] = f1_k;
-    return f1_k;
-  }
+  int f1_k = f1(d.quot) + d.rem;
+  f1_memo[k] = f1_k;
+  return f1_k;
 }
 
 int f(int k)
